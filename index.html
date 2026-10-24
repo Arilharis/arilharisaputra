@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="id" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Aril Hari Saputra — Full-Stack Developer</title>
+  <meta name="description" content="Portofolio Aril Hari Saputra, full-stack developer dari Bandar Lampung. Lihat proyek, sertifikat, dan cara menghubungi saya." />
+  <meta property="og:title" content="Aril Hari Saputra — Full-Stack Developer" />
+  <meta property="og:description" content="Portofolio Aril Hari Saputra: proyek, keahlian, dan kontak." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://arilharisaputra.vercel.app/" />
+  <meta property="og:image" content="https://arilharisaputra.vercel.app/assets/tourventure.jpg" />
+  <link rel="canonical" href="https://arilharisaputra.vercel.app/" />
+  <meta name="theme-color" content="#0b0b0e" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23ff6a3d'/%3E%3Ctext x='50%25' y='56%25' text-anchor='middle' dominant-baseline='middle' font-family='Arial' font-weight='700' font-size='28' fill='%230b0b0e'%3EAH%3C/text%3E%3C/svg%3E" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/devicon.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <script>
+    // Terapkan tema tersimpan sebelum render agar tidak berkedip.
+    try {
+      const t = localStorage.getItem("theme");
+      if (t) document.documentElement.dataset.theme = t;
+      else if (matchMedia("(prefers-color-scheme: light)").matches) document.documentElement.dataset.theme = "light";
+    } catch (e) {}
+  </script>
+</head>
+<body>
+  <a class="skip" href="#main">Lewati ke konten</a>
+  <div class="progress" aria-hidden="true"></div>
+  <div class="bg-grid" aria-hidden="true"></div>
+
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="#home" class="logo" data-domain></a>
+      <nav class="nav-links" id="navLinks" aria-label="Navigasi utama">
+        <a href="#home">Beranda</a>
+        <a href="#about">Tentang</a>
+        <a href="#portfolio">Portofolio</a>
+        <a href="#experience">Perjalanan</a>
+        <a href="#contact">Kontak</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="icon-btn" id="themeToggle" aria-label="Ganti tema terang/gelap"></button>
+        <button class="icon-btn menu-btn" id="menuBtn" aria-label="Buka menu" aria-expanded="false" aria-controls="navLinks"></button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero" id="home">
+      <div class="container hero-inner">
+        <div class="hero-text">
+          <p class="badge reveal" id="availBadge"><span class="dot"></span>Terbuka untuk proyek &amp; magang</p>
+          <p class="mono-label reveal">// halo, saya</p>
+          <h1 class="hero-title reveal">
+            <span data-name></span>
+          </h1>
+          <p class="hero-role reveal" aria-live="polite">
+            <span class="role-prefix">&gt;</span> <span id="typed"></span><span class="caret" aria-hidden="true"></span>
+          </p>
+          <p class="hero-desc reveal" data-tagline></p>
+          <div class="hero-cta reveal">
+            <a href="#portfolio" class="btn btn-primary">Lihat Proyek <span data-icon="arrow"></span></a>
+            <a href="#" class="btn btn-ghost" data-cv download>Unduh CV <span data-icon="download"></span></a>
+          </div>
+          <div class="hero-social reveal" data-socials></div>
+        </div>
+
+        <div class="hero-visual" aria-label="Kartu identitas interaktif — seret untuk mengayun, klik untuk membalik">
+          <div class="lanyard" id="lanyard">
+            <div class="swing" id="swing">
+              <div class="strap"><span>RIELLL.DEV · RIELLL.DEV · RIELLL.DEV</span></div>
+              <div class="clip"></div>
+              <div class="id-card" id="idCard" tabindex="0" role="button" aria-label="Balik kartu identitas">
+                <div class="id-face id-front">
+                  <div class="id-top"><span class="id-hole"></span></div>
+                  <div class="id-photo" data-photo></div>
+                  <div class="id-name" data-name></div>
+                  <div class="id-role" data-role></div>
+                  <div class="id-meta"><span>ID</span> AHS-2026</div>
+                  <div class="barcode" aria-hidden="true"></div>
+                </div>
+                <div class="id-face id-back">
+                  <div class="id-top"><span class="id-hole"></span></div>
+                  <p class="mono-label">// kontak</p>
+                  <p class="id-back-mail" data-email-text></p>
+                  <p class="id-back-loc">📍 <span data-location></span></p>
+                  <p class="id-back-hint">Klik lagi untuk membalik</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <p class="hint mono">↖ seret kartunya · klik untuk membalik</p>
+        </div>
+      </div>
+      <a href="#about" class="scroll-cue" aria-label="Gulir ke bagian Tentang"><span></span></a>
+    </section>
+
+    <!-- MARQUEE -->
+    <div class="marquee" aria-hidden="true"><div class="marquee-track" id="marquee"></div></div>
+
+    <!-- ABOUT -->
+    <section class="section" id="about">
+      <div class="container about-grid">
+        <div class="about-photo reveal">
+          <div class="photo-frame" data-photo></div>
+          <div class="photo-tag mono">📍 <span data-location></span></div>
+        </div>
+        <div class="about-text">
+          <p class="mono-label reveal">// 01 — tentang saya</p>
+          <h2 class="section-title reveal">Developer yang peduli pada <em>detail</em>.</h2>
+          <div class="reveal" data-about></div>
+          <blockquote class="quote reveal" data-quote></blockquote>
+          <div class="stats reveal" data-stats></div>
+        </div>
+      </div>
+
+      <div class="container services">
+        <p class="mono-label reveal">// yang bisa saya bantu</p>
+        <div class="services-grid" data-services></div>
+      </div>
+    </section>
+
+    <!-- PORTFOLIO -->
+    <section class="section" id="portfolio">
+      <div class="container">
+        <div class="section-head center">
+          <p class="mono-label reveal">// 02 — portofolio</p>
+          <h2 class="section-title reveal">Karya &amp; keahlian</h2>
+          <p class="section-sub reveal">Proyek yang pernah saya kerjakan, sertifikat yang saya raih, dan teknologi yang saya pakai.</p>
+        </div>
+
+        <div class="tabs reveal" role="tablist" aria-label="Kategori portofolio">
+          <button role="tab" class="tab active" aria-selected="true" aria-controls="panel-projects" id="tab-projects">Proyek</button>
+          <button role="tab" class="tab" aria-selected="false" aria-controls="panel-certs" id="tab-certs" tabindex="-1">Sertifikat</button>
+          <button role="tab" class="tab" aria-selected="false" aria-controls="panel-tech" id="tab-tech" tabindex="-1">Tech Stack</button>
+          <span class="tab-indicator" aria-hidden="true"></span>
+        </div>
+
+        <div class="panel" role="tabpanel" id="panel-projects" aria-labelledby="tab-projects">
+          <div class="filters" id="filters"></div>
+          <div class="projects-grid" id="projects"></div>
+        </div>
+        <div class="panel" role="tabpanel" id="panel-certs" aria-labelledby="tab-certs" hidden>
+          <div class="certs-grid" id="certs"></div>
+        </div>
+        <div class="panel" role="tabpanel" id="panel-tech" aria-labelledby="tab-tech" hidden>
+          <div id="tech"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section class="section" id="experience">
+      <div class="container narrow">
+        <div class="section-head">
+          <p class="mono-label reveal">// 03 — perjalanan</p>
+          <h2 class="section-title reveal">Pengalaman &amp; pendidikan</h2>
+        </div>
+        <ol class="timeline" id="timeline"></ol>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section" id="contact">
+      <div class="container contact-grid">
+        <div class="contact-info">
+          <p class="mono-label reveal">// 04 — kontak</p>
+          <h2 class="section-title reveal">Punya ide? <br />Mari bikin bareng.</h2>
+          <p class="section-sub reveal">Saya terbuka untuk proyek freelance, kolaborasi, maupun magang. Biasanya saya membalas dalam 1×24 jam.</p>
+          <div class="mail-row reveal">
+            <a class="mail-link" data-email-link></a>
+            <button class="icon-btn" id="copyEmail" aria-label="Salin alamat email"></button>
+          </div>
+          <div class="hero-social reveal" data-socials></div>
+        </div>
+
+        <form class="contact-form reveal" id="contactForm" novalidate>
+          <div class="field">
+            <label for="cName">Nama</label>
+            <input id="cName" name="name" type="text" autocomplete="name" placeholder="Nama kamu" required />
+            <small class="err" aria-live="polite"></small>
+          </div>
+          <div class="field">
+            <label for="cEmail">Email</label>
+            <input id="cEmail" name="email" type="email" autocomplete="email" placeholder="nama@email.com" required />
+            <small class="err" aria-live="polite"></small>
+          </div>
+          <div class="field">
+            <label for="cMsg">Pesan</label>
+            <textarea id="cMsg" name="message" rows="5" placeholder="Ceritakan proyek atau pertanyaanmu…" required minlength="10"></textarea>
+            <small class="err" aria-live="polite"></small>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">Kirim Pesan <span data-icon="send"></span></button>
+          <p class="form-note">Pesan akan dibuka di aplikasi email kamu.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> <span data-name></span>. Dibuat dengan HTML, CSS &amp; JavaScript.</p>
+      <a href="#home" class="back-top">Kembali ke atas ↑</a>
+    </div>
+  </footer>
+
+  <!-- Modal detail proyek -->
+  <dialog class="modal" id="projectModal" aria-labelledby="modalTitle">
+    <div class="modal-body" id="modalBody"></div>
+  </dialog>
+
+  <!-- Lightbox gambar sertifikat / dokumentasi -->
+  <dialog class="modal lightbox" id="lightbox" aria-label="Pratinjau gambar">
+    <div class="lightbox-body" id="lightboxBody"></div>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
